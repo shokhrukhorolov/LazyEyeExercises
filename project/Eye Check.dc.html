@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; }
+  body {
+    background-color: #F1ECE2;
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E"),
+      radial-gradient(130% 100% at 50% 0%, #FFFEFB 0%, #F7F4EE 58%, #F1ECE2 100%);
+    background-size: 180px 180px, cover;
+    background-repeat: repeat, no-repeat;
+    background-attachment: fixed, fixed;
+  }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+  ::selection { background: #D8C7B0; color: #2B2825; }
+  image-slot { display: block; width: 100%; height: 100%; }
+  @keyframes revealUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeSwap { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition: none !important; animation: none !important; }
+  }
+</style>
+</helmet>
+<div ref="{{ rootRef }}" style="background:transparent; color:#2B2825; font-family:'Mulish',-apple-system,sans-serif; -webkit-font-smoothing:antialiased; overflow-x:hidden; min-height:100vh;">
+
+  <!-- WARNING BANNER (persistent, non-dismissible) -->
+  <div role="alert" style="position:sticky; top:0; z-index:40; background:#EAEEE3; border-bottom:1px solid #D8C7B0; color:#2B2825; font-size:14.5px; line-height:1.55; padding:13px clamp(20px,5vw,72px); text-align:center; font-weight:600;">
+    <span style="margin-right:6px;">⚠️</span> This is not a medical test. Built by a person with Amblyopia, not a doctor. Please see an ophthalmologist for a real diagnosis.
+  </div>
+
+  <!-- NAV -->
+  <header style="display:flex; align-items:center; justify-content:space-between; padding:24px clamp(24px,5vw,72px);">
+    <a href="Home.dc.html" style="display:flex; align-items:center; gap:12px; text-decoration:none; color:#2B2825;">
+      <span style="width:13px; height:13px; border-radius:50%; background:#C2724C; display:inline-block;"></span>
+      <span style="font-family:'Newsreader',serif; font-size:21px; font-weight:500;">LazyEye Training</span>
+    </a>
+    <a href="Home.dc.html" style="text-decoration:none; color:#5C574F; font-size:15px; font-weight:600;">← Home</a>
+  </header>
+
+  <!-- HERO -->
+  <section data-reveal style="padding:clamp(64px,9vw,120px) clamp(24px,5vw,72px) clamp(40px,5vw,64px); max-width:880px; margin:0 auto; text-align:center;">
+    <p style="font-size:14px; letter-spacing:2.5px; text-transform:uppercase; color:#5C574F; margin:0 0 24px; font-weight:700;">A gentle self-check</p>
+    <h1 style="font-family:'Newsreader',serif; font-weight:500; font-size:clamp(38px,6vw,72px); line-height:1.05; letter-spacing:-1px; margin:0 0 26px; text-wrap:balance;">Find out which eye needs <span style="font-style:italic; color:#C2724C;">more attention.</span></h1>
+    <p style="font-size:clamp(17px,1.5vw,20px); line-height:1.7; color:#5C574F; margin:0 auto 38px; max-width:520px;">Answer 5-10 simple questions. Takes about two minutes, nothing is recorded or sent anywhere.</p>
+    <a href="#assess" style="display:inline-flex; align-items:center; gap:12px; background:#2B2825; color:#F7F4EE; text-decoration:none; padding:18px 32px; border-radius:40px; font-size:16px; font-weight:700; letter-spacing:0.3px; transition:transform .4s ease, background .4s ease;" style-hover="background:#C2724C; transform:translateY(-2px);">Start Assessment <span style="font-size:18px;">→</span></a>
+  </section>
+
+  <!-- ASSESSMENT SPLIT -->
+  <section id="assess" data-reveal style="scroll-margin-top:120px; max-width:1240px; margin:0 auto; padding:clamp(24px,4vw,56px) clamp(24px,5vw,72px) clamp(80px,11vw,150px); display:flex; gap:clamp(24px,3vw,44px); align-items:stretch; flex-wrap:wrap;">
+
+    <!-- PHOTO -->
+    <div style="flex:1 1 320px; min-height:clamp(380px,62vh,580px); border-radius:clamp(20px,2.6vw,32px); overflow:hidden; background:repeating-linear-gradient(135deg,#EFE9DE,#EFE9DE 14px,#E7E0D2 14px,#E7E0D2 28px); box-shadow:0 50px 90px -55px rgba(120,82,45,0.45), 0 12px 30px -22px rgba(120,82,45,0.28);">
+      <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="assess-photo" shape="rounded" radius="32" placeholder="Drop your photo here" style="width:100%; height:100%; display:block;" hint-size="100%,100%"></x-import>
+    </div>
+
+    <!-- CARD -->
+    <div style="flex:1.15 1 440px; min-height:clamp(380px,62vh,580px); background:linear-gradient(180deg,#FFFEFB,#F7F4EE); border:1px solid rgba(120,82,45,0.08); border-radius:clamp(20px,2.6vw,32px); padding:clamp(32px,3.8vw,60px); box-shadow:0 60px 110px -55px rgba(120,82,45,0.5), 0 16px 40px -26px rgba(120,82,45,0.3); display:flex; flex-direction:column;">
+
+      <!-- QUESTION VIEW -->
+      <sc-if value="{{ showQuestion }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex; flex-direction:column; height:100%;">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:14px;">
+            <span style="font-size:13px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#5C574F;">Question {{ stepNum }} of {{ total }}</span>
+            <span style="font-family:'Newsreader',serif; font-size:22px; color:#D8C7B0;">{{ stepBadge }}</span>
+          </div>
+          <div style="height:5px; border-radius:4px; background:#EFE9DE; overflow:hidden; margin-bottom:clamp(28px,4vw,44px);">
+            <div data-bar style="height:100%; background:#2B2825; border-radius:4px; transition:width .5s cubic-bezier(.2,.7,.2,1); width:{{ progressFill }};"></div>
+          </div>
+          <h2 data-qtext style="font-family:'Newsreader',serif; font-weight:500; font-size:clamp(25px,2.9vw,38px); line-height:1.18; letter-spacing:-0.4px; margin:0 0 clamp(26px,3.4vw,38px); text-wrap:balance;">{{ currentText }}</h2>
+          <div data-qopts style="display:flex; flex-direction:column; gap:12px;">
+            <sc-for list="{{ currentOptions }}" as="opt" hint-placeholder-count="3">
+              <button type="button" onClick="{{ opt.onClick }}" style="display:flex; align-items:center; justify-content:space-between; gap:12px; width:100%; box-sizing:border-box; text-align:left; cursor:pointer; font-family:'Mulish',sans-serif; font-size:16.5px; font-weight:600; padding:17px 22px; border-radius:16px; border:1px solid #D8C7B0; background:#FBF9F4; color:#2B2825; transition:background .3s ease, border-color .3s ease, color .3s ease, transform .3s ease;" style-hover="background:#2B2825; border-color:#2B2825; color:#fff; transform:translateX(3px);">
+                <span>{{ opt.text }}</span>
+                <span style="font-size:16px; opacity:0.5;">→</span>
+              </button>
+            </sc-for>
+          </div>
+          <div style="margin-top:auto; padding-top:28px;">
+            <sc-if value="{{ canBack }}" hint-placeholder-val="{{ false }}">
+              <button type="button" onClick="{{ back }}" style="background:none; border:none; padding:6px 0; color:#5C574F; font-family:'Mulish',sans-serif; font-size:15px; font-weight:600; cursor:pointer;">← Back</button>
+            </sc-if>
+          </div>
+        </div>
+      </sc-if>
+
+      <!-- RESULT VIEW -->
+      <sc-if value="{{ showResult }}" hint-placeholder-val="{{ false }}">
+        <div data-result style="display:flex; flex-direction:column; height:100%;">
+          <p style="font-size:13px; letter-spacing:1.5px; text-transform:uppercase; color:#5C574F; margin:0 0 18px; font-weight:700;">Your gentle summary</p>
+          <h2 style="font-family:'Newsreader',serif; font-weight:500; font-size:clamp(26px,3.2vw,42px); line-height:1.14; letter-spacing:-0.5px; margin:0 0 22px; text-wrap:balance;">{{ resultHeadline }}</h2>
+          <p style="font-size:clamp(16px,1.45vw,19px); line-height:1.75; color:#5C574F; margin:0 0 16px;">{{ resultBody }}</p>
+          <p style="font-size:14.5px; line-height:1.7; color:#5C574F; margin:0 0 32px;">Remember: this is a feeling-it-out exercise, not a diagnosis. An eye-care professional can tell you what's actually going on.</p>
+          <div style="margin-top:auto; display:flex; gap:12px; flex-wrap:wrap;">
+            <a href="Home.dc.html#training" style="display:inline-flex; align-items:center; gap:10px; background:#2B2825; color:#F7F4EE; text-decoration:none; padding:16px 28px; border-radius:38px; font-size:15.5px; font-weight:700; transition:transform .4s ease, background .4s ease;" style-hover="background:#C2724C; transform:translateY(-2px);">Start with training <span>→</span></a>
+            <button type="button" onClick="{{ reset }}" style="background:none; border:1px solid #D8C7B0; color:#5C574F; padding:16px 28px; border-radius:38px; font-size:15px; font-weight:600; cursor:pointer; transition:background .4s ease;" style-hover="background:#EAEEE3;">Start over</button>
+          </div>
+        </div>
+      </sc-if>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer data-reveal style="position:relative; z-index:2; background:#2B2825; color:#F7F4EE; padding:clamp(72px,9vw,120px) clamp(24px,5vw,72px) 48px; margin-top:clamp(56px,9vw,120px); border-radius:clamp(28px,4vw,48px) clamp(28px,4vw,48px) 0 0;">
+    <div style="max-width:720px;">
+      <p style="font-size:14px; letter-spacing:2.5px; text-transform:uppercase; color:#D8C7B0; margin:0 0 22px; font-weight:700;">A note from me</p>
+      <h2 style="font-family:'Newsreader',serif; font-weight:500; font-style:italic; font-size:clamp(26px,3.6vw,44px); line-height:1.2; margin:0 0 26px;">Have an idea, or want to share what worked for you?</h2>
+      <div style="display:flex; gap:16px; flex-wrap:wrap;">
+        <a href="https://www.linkedin.com/in/shokhrukhorolov/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:10px; background:rgba(247,244,238,0.08); border:1px solid rgba(247,244,238,0.18); color:#F7F4EE; text-decoration:none; padding:15px 26px; border-radius:36px; font-size:15px; font-weight:600; transition:background .4s ease;" style-hover="background:rgba(247,244,238,0.16);">in&nbsp; Connect on LinkedIn</a>
+        <a href="mailto:shokhrukh.orolov@gmail.com" style="display:inline-flex; align-items:center; gap:10px; background:#C2724C; color:#fff; text-decoration:none; padding:15px 26px; border-radius:36px; font-size:15px; font-weight:700; transition:transform .4s ease;" style-hover="transform:translateY(-2px);">✉ Email me</a>
+      </div>
+    </div>
+    <div style="margin-top:clamp(48px,7vw,80px); padding-top:26px; border-top:1px solid rgba(247,244,238,0.12); display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:13px; color:#D8C7B0;"><span>LazyEye Training, a free personal project. Not medical advice.</span><a href="Privacy.dc.html" style="color:#D8C7B0; text-decoration:none; font-weight:600;">Privacy &amp; Policy</a></div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { answers: {}, step: 0 };
+
+  defs() {
+    return [
+      { id: "dominant", text: "Which eye feels like your dominant, go-to eye?", opts: ["Left eye", "Right eye", "Honestly not sure"] },
+      { id: "blur", text: "Does vision in one eye feel softer or blurrier, even with glasses?", opts: ["Yes, noticeably", "A little", "No"] },
+      { id: "depth", text: "Do you find depth or 3D harder than people around you?", opts: ["Often", "Sometimes", "Rarely"] },
+      { id: "fatigue", text: "After screens or reading, does one eye tire or drift first?", opts: ["Yes", "Maybe", "No"] },
+      { id: "history", text: "Were you ever told as a child you had a lazy or turned eye?", opts: ["Yes", "Not sure", "No"] },
+      { id: "patch", text: "Have you ever worn a patch or done vision therapy?", opts: ["Yes", "No", "What's that?"] }
+    ];
+  }
+
+  pick(qid, value) {
+    this.setState(s => ({
+      answers: Object.assign({}, s.answers, { [qid]: value }),
+      step: Math.min(s.step + 1, this.defs().length)
+    }));
+  }
+  back() { this.setState(s => ({ step: Math.max(0, s.step - 1) })); }
+  reset() { this.setState({ answers: {}, step: 0 }); }
+
+  renderVals() {
+    const defs = this.defs();
+    const total = defs.length;
+    const step = Math.min(this.state.step, total);
+    const showResult = step >= total;
+    const A = this.state.answers;
+
+    const cur = !showResult ? defs[step] : null;
+    const currentOptions = cur ? cur.opts.map(o => ({
+      text: o,
+      onClick: () => this.pick(cur.id, o)
+    })) : [];
+
+    // scoring (non-diagnostic)
+    let weaker = "your less-confident eye";
+    if (A.dominant === "Left eye") weaker = "your right eye";
+    else if (A.dominant === "Right eye") weaker = "your left eye";
+
+    let signals = 0;
+    if (A.blur === "Yes, noticeably") signals += 2; else if (A.blur === "A little") signals += 1;
+    if (A.depth === "Often") signals += 2; else if (A.depth === "Sometimes") signals += 1;
+    if (A.fatigue === "Yes") signals += 1; else if (A.fatigue === "Maybe") signals += 0.5;
+    if (A.history === "Yes") signals += 2; else if (A.history === "Not sure") signals += 0.5;
+
+    let resultHeadline, resultBody;
+    if (signals >= 4) {
+      resultHeadline = "Your answers suggest " + weaker + " may want some extra attention.";
+      resultBody = "Several of your answers line up with how amblyopia tends to feel day to day. That doesn't confirm anything, but it's a good nudge to book a proper eye exam, and meanwhile a calm place to start practicing is exactly what the training room is for.";
+    } else if (signals >= 1.5) {
+      resultHeadline = "There are a few small signals worth keeping an eye on.";
+      resultBody = "Nothing here screams anything, but a couple of your answers are familiar to me. Gentle, regular practice can't hurt, and a routine check-up is always a kind thing to do for yourself.";
+    } else {
+      resultHeadline = "Nothing here stands out, which is genuinely good news.";
+      resultBody = "Your answers don't show the usual patterns. If something still feels off to you, trust that and see a professional anyway. Otherwise, you're welcome to explore the training room just for the practice.";
+    }
+
+    return {
+      rootRef: (el) => { this._root = el; },
+      showQuestion: !showResult,
+      showResult,
+      stepNum: Math.min(step + 1, total),
+      stepBadge: String(Math.min(step + 1, total)).padStart(2, "0"),
+      total,
+      progressFill: Math.round(((showResult ? total : step) / total) * 100) + "%",
+      currentText: cur ? cur.text : "",
+      currentOptions,
+      canBack: step > 0 && !showResult,
+      back: () => this.back(),
+      reset: () => this.reset(),
+      resultHeadline,
+      resultBody
+    };
+  }
+
+  componentDidUpdate() {
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce || !this._root) return;
+    // gently fade the question text/options on each step change
+    const lastStep = this._lastStep;
+    this._lastStep = this.state.step;
+    if (lastStep !== undefined && lastStep !== this.state.step) {
+      const t = this._root.querySelector('[data-qtext]');
+      const o = this._root.querySelector('[data-qopts]');
+      [t, o].forEach((el, i) => {
+        if (el) { el.style.animation = 'none'; void el.offsetWidth; el.style.animation = 'fadeSwap .5s ease ' + (i * 0.05) + 's both'; }
+      });
+      const r = this._root.querySelector('[data-result]');
+      if (r) { r.style.animation = 'revealUp .7s ease both'; }
+    }
+  }
+
+  componentDidMount() {
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce || !('IntersectionObserver' in window)) return;
+    const els = this._root ? Array.from(this._root.querySelectorAll('[data-reveal]')) : [];
+    const play = (el) => { el.style.animation = 'revealUp 0.85s cubic-bezier(.2,.7,.2,1) both'; };
+    const inView = (el) => {
+      const r = el.getBoundingClientRect();
+      return r.top < (window.innerHeight || 0) && r.bottom > 0;
+    };
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { play(e.target); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    els.forEach(el => { if (!inView(el)) io.observe(el); });
+  }
+}
+</script>
+</body>
+</html>

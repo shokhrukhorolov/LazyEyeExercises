@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; }
+  body {
+    background-color: #F1ECE2;
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E"),
+      radial-gradient(130% 100% at 50% 0%, #FFFEFB 0%, #F7F4EE 58%, #F1ECE2 100%);
+    background-size: 180px 180px, cover;
+    background-repeat: repeat, no-repeat;
+    background-attachment: fixed, fixed;
+  }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+  ::selection { background: #D8C7B0; color: #2B2825; }
+  @keyframes revealUp { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: translateY(0); } }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition: none !important; animation: none !important; }
+  }
+</style>
+</helmet>
+<div ref="{{ rootRef }}" style="background:transparent; color:#2B2825; font-family:'Mulish',-apple-system,sans-serif; -webkit-font-smoothing:antialiased; overflow-x:hidden;">
+
+  <!-- NAV -->
+  <header style="position:absolute; top:0; left:0; right:0; z-index:20; display:flex; align-items:center; justify-content:space-between; padding:28px clamp(24px,5vw,72px);">
+    <a href="Home.dc.html" style="display:flex; align-items:center; gap:12px; text-decoration:none; color:#2B2825;">
+      <span style="width:13px; height:13px; border-radius:50%; background:#C2724C; display:inline-block;"></span>
+      <span style="font-family:'Newsreader',serif; font-size:21px; font-weight:500; letter-spacing:0.2px;">LazyEye Training</span>
+    </a>
+    <a href="Eye Check.dc.html" style="text-decoration:none; color:#5C574F; font-size:15px; font-weight:600; letter-spacing:0.2px;">Eye Check</a>
+  </header>
+
+  <!-- HERO -->
+  <section style="position:relative; min-height:100vh; box-sizing:border-box; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:clamp(150px,21vh,220px) clamp(24px,5vw,72px) clamp(120px,17vh,190px);">
+    <div data-reveal style="max-width:820px; display:flex; flex-direction:column; align-items:center;">
+      <p style="font-size:14px; letter-spacing:2.5px; text-transform:uppercase; color:#5C574F; margin:0 0 28px; font-weight:700;">A personal project · not a medical product</p>
+      <h1 style="font-family:'Newsreader',serif; font-weight:500; font-size:clamp(44px,7vw,86px); line-height:1.02; letter-spacing:-1px; margin:0 0 32px; text-wrap:balance;">Train your eye.<br><span style="font-style:italic; color:#C2724C;">At your own pace.</span></h1>
+      <p style="font-size:clamp(17px,1.5vw,20px); line-height:1.7; color:#5C574F; max-width:560px; margin:0 0 40px;">I built this because I have a lazy eye too. This isn't medical advice, just what helped me, and what the research suggests. Please talk to your doctor.</p>
+      <a href="Eye Check.dc.html" style="display:inline-flex; align-items:center; gap:12px; background:#2B2825; color:#F7F4EE; text-decoration:none; padding:18px 32px; border-radius:40px; font-size:16px; font-weight:700; letter-spacing:0.3px; transition:transform .4s ease, background .4s ease;" style-hover="background:#C2724C; transform:translateY(-2px);">Check my eye <span style="font-size:18px;">→</span></a>
+    </div>
+  </section>
+
+  <!-- TRAINING PLACEHOLDER -->
+  <section id="training" style="scroll-margin-top:100px; position:relative; z-index:2; margin-top:clamp(-80px,-7vh,-48px); padding:0 clamp(18px,5vw,72px) clamp(40px,6vw,90px);">
+    <div data-reveal style="position:relative; max-width:1180px; margin:0 auto; background:linear-gradient(180deg,#FFFEFB 0%,#F7F4EE 100%); border:1px solid rgba(120,82,45,0.08); border-radius:clamp(24px,3vw,40px); padding:clamp(36px,5.5vw,84px); box-shadow:0 60px 110px -60px rgba(120,82,45,0.5), 0 16px 40px -28px rgba(120,82,45,0.3);">
+      <div style="display:flex; align-items:baseline; justify-content:space-between; gap:24px; flex-wrap:wrap; margin-bottom:clamp(36px,4vw,56px);">
+        <h2 style="font-family:'Newsreader',serif; font-weight:500; font-size:clamp(32px,4.5vw,56px); line-height:1.05; letter-spacing:-0.5px; margin:0; max-width:640px;">The training room</h2>
+        <span style="display:inline-flex; align-items:center; gap:8px; font-size:14px; font-weight:700; letter-spacing:0.3px; color:#5C574F; background:#EAEEE3; padding:9px 16px; border-radius:30px;"><span style="width:8px; height:8px; border-radius:50%; background:#5C574F;"></span> In the works</span>
+      </div>
+      <div style="border:2px dashed #D8C7B0; border-radius:clamp(16px,2vw,24px); min-height:clamp(340px,46vh,500px); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:clamp(48px,7vw,90px) clamp(28px,5vw,56px); gap:22px; background:rgba(199,160,120,0.06);">
+        <span style="width:52px; height:52px; border-radius:50%; border:2px solid #C2724C; display:flex; align-items:center; justify-content:center;"><span style="width:16px; height:16px; border-radius:50%; background:#C2724C;"></span></span>
+        <p style="font-family:'Newsreader',serif; font-style:italic; font-size:clamp(21px,2.5vw,30px); color:#5C574F; margin:0; max-width:540px; line-height:1.45;">Training exercises coming soon, animated eye-tracking exercises will live here.</p>
+        <p style="font-size:15.5px; color:#5C574F; margin:0; max-width:440px; line-height:1.65;">Gentle, slow-moving targets you follow with the weaker eye. No flashing, no rush.</p>
+      </div>
+    </div>
+    <div data-reveal style="position:relative; z-index:3; max-width:660px; margin:clamp(-44px,-3vw,-30px) auto 0; background:#2B2825; color:#F7F4EE; border-radius:20px; padding:clamp(18px,2.4vw,24px) clamp(22px,3vw,34px); display:flex; align-items:center; gap:16px; box-shadow:0 34px 70px -42px rgba(120,82,45,0.85); font-size:15px; font-weight:600; line-height:1.55; text-align:left;">
+      <span style="font-size:20px; flex:0 0 auto;">☕</span><span>A soft reminder, rest your eyes every 20 minutes. Look at something 20 feet away for 20 seconds.</span>
+    </div>
+  </section>
+
+  <!-- FAQ KNOWLEDGE BASE -->
+  <section style="position:relative; padding:clamp(60px,8vw,120px) clamp(18px,5vw,72px) clamp(20px,4vw,60px);">
+    <div data-reveal style="max-width:1180px; margin:0 auto clamp(36px,4.5vw,60px);">
+      <p style="font-size:14px; letter-spacing:2.5px; text-transform:uppercase; color:#5C574F; margin:0 0 18px; font-weight:700;">Plain-language notes</p>
+      <h2 style="font-family:'Newsreader',serif; font-weight:500; font-size:clamp(32px,4.5vw,56px); line-height:1.05; letter-spacing:-0.5px; margin:0; color:#2B2825; max-width:680px; text-wrap:balance;">Questions, answered.</h2>
+    </div>
+    <div style="max-width:1180px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:clamp(20px,2.4vw,30px);">
+      <sc-for list="{{ chapters }}" as="ch" hint-placeholder-count="8">
+        <article data-reveal style="background:#FFFEFB; border:1px solid #D8C7B0; border-radius:clamp(18px,2vw,24px); padding:clamp(28px,3.2vw,44px); box-shadow:0 30px 60px -42px rgba(120,82,45,0.45), 0 6px 18px -12px rgba(120,82,45,0.22); display:flex; flex-direction:column;">
+          <h3 style="font-family:'Newsreader',serif; font-weight:600; font-size:clamp(22px,2.3vw,29px); line-height:1.2; letter-spacing:-0.3px; margin:0 0 18px; color:#2B2825; text-wrap:balance;">{{ ch.q }}</h3>
+          <p style="font-size:clamp(15.5px,1.15vw,17px); line-height:1.75; color:#5C574F; margin:0 0 14px;">{{ ch.a1 }}</p>
+          <p style="font-size:clamp(15.5px,1.15vw,17px); line-height:1.75; color:#5C574F; margin:0;">{{ ch.a2 }}</p>
+        </article>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer data-reveal style="position:relative; z-index:2; background:#2B2825; color:#F7F4EE; padding:clamp(72px,9vw,130px) clamp(24px,5vw,72px) 56px; margin-top:clamp(56px,9vw,120px); border-radius:clamp(28px,4vw,48px) clamp(28px,4vw,48px) 0 0;">
+    <div style="max-width:720px;">
+      <p style="font-size:14px; letter-spacing:2.5px; text-transform:uppercase; color:#D8C7B0; margin:0 0 24px; font-weight:700;">A note from me</p>
+      <h2 style="font-family:'Newsreader',serif; font-weight:500; font-style:italic; font-size:clamp(28px,3.8vw,46px); line-height:1.2; letter-spacing:-0.3px; margin:0 0 28px;">Have an idea, or want to share what worked for you?</h2>
+      <p style="font-size:18px; line-height:1.7; color:#D8C7B0; margin:0 0 36px; max-width:560px;">I'm not a doctor, just someone living with the same thing, building in the open. If you've found exercises that helped, or you want a feature, I'd genuinely love to hear it.</p>
+      <div style="display:flex; gap:16px; flex-wrap:wrap;">
+        <a href="https://www.linkedin.com/in/shokhrukhorolov/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:10px; background:rgba(247,244,238,0.08); border:1px solid rgba(247,244,238,0.18); color:#F7F4EE; text-decoration:none; padding:15px 26px; border-radius:36px; font-size:15px; font-weight:600; transition:background .4s ease;" style-hover="background:rgba(247,244,238,0.16);">in&nbsp; Connect on LinkedIn</a>
+        <a href="mailto:shokhrukh.orolov@gmail.com" style="display:inline-flex; align-items:center; gap:10px; background:#C2724C; color:#fff; text-decoration:none; padding:15px 26px; border-radius:36px; font-size:15px; font-weight:700; transition:transform .4s ease;" style-hover="transform:translateY(-2px);">✉ Email me</a>
+      </div>
+    </div>
+    <div style="margin-top:clamp(56px,8vw,96px); padding-top:28px; border-top:1px solid rgba(247,244,238,0.12); display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:13px; color:#D8C7B0;">
+      <span>LazyEye Training, a free personal project. Not medical advice.</span>
+      <span style="display:inline-flex; gap:18px; align-items:center;"><a href="Privacy.dc.html" style="color:#D8C7B0; text-decoration:none; font-weight:600;">Privacy &amp; Policy</a> Made with rest breaks · 2026</span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      rootRef: (el) => { this._root = el; },
+      chapters: [
+        {
+          q: "What is Amblyopia, really?",
+          a1: "Amblyopia, most people call it lazy eye, is when one eye and the brain stop working together properly, usually from early childhood. The eye itself is often physically healthy; it's the connection that's underdeveloped, so the brain quietly leans on the stronger eye and tunes the weaker one down.",
+          a2: "That's why glasses alone don't always fix it. The work is partly about teaching the brain to start paying attention to the eye it's been ignoring."
+        },
+        {
+          q: "Who tends to get it?",
+          a1: "It often starts in childhood, from a large difference in prescription between the two eyes, a turned eye (strabismus), or something blocking clear vision early on. It's one of the most common reasons for reduced vision in one eye.",
+          a2: "Plenty of us grew up not knowing we had it. If one eye has always felt a little second-string, that's worth a real eye exam, not because something is wrong with you, but because it's so common and so quiet."
+        },
+        {
+          q: "Can adults actually improve?",
+          a1: "The old belief was that the window closed in childhood. More recent research is gentler and more hopeful: the adult brain keeps more plasticity than we assumed, and some people do see meaningful gains with consistent, structured visual work.",
+          a2: "It's not a guarantee, and it's slow. But \"too late\" is no longer the settled answer it once was, which is a big part of why I keep practicing."
+        },
+        {
+          q: "How does screen training fit in?",
+          a1: "Screen-based exercises let you practice the boring-but-important things at home: following a slow target with the weaker eye, or doing tasks that nudge both eyes to cooperate. The point isn't intensity, it's small, regular, calm sessions.",
+          a2: "Think of this site as a quiet practice space, not a treatment. Pair anything here with guidance from an eye-care professional who actually knows your eyes."
+        },
+        {
+          q: "Where does lazy eye syndrome come from?",
+          a1: "It usually traces back to early childhood, when the two eyes send mismatched pictures to the brain. A big difference in prescription between the eyes, a turn or drift in one eye, or anything that blurred vision early on can all set it off.",
+          a2: "The brain, trying to avoid double or fuzzy vision, learns to favour the clearer eye and quietly suppress the other. That habit, not damage to the eye, is the real root of it."
+        },
+        {
+          q: "How does lazy eye syndrome actually work?",
+          a1: "The eye and brain are a team, and amblyopia is really a teamwork problem. The weaker eye's signal gets turned down inside the visual part of the brain, so even a physically healthy eye can end up seeing less than it should.",
+          a2: "Because it lives in the brain's wiring rather than the eye, training is about coaxing those pathways back into use, patiently and repeatedly."
+        },
+        {
+          q: "Is there a real chance of improvement?",
+          a1: "For many people, yes, especially with steady, structured practice. Childhood is the easiest window, but research keeps showing the adult brain holds onto more plasticity than we once believed.",
+          a2: "Gains tend to be gradual and vary a lot from person to person. It's worth doing with patient, realistic expectations, ideally alongside an eye-care professional."
+        },
+        {
+          q: "What medications are typically used?",
+          a1: "Amblyopia usually isn't treated with pills. The classic approaches are optical and behavioural: correct glasses, patching the stronger eye, or atropine eye drops that briefly blur it so the weaker eye has to work.",
+          a2: "I'm not a doctor and this isn't a prescription, only an ophthalmologist can decide what, if anything, is right for your eyes."
+        }
+      ]
+    };
+  }
+  componentDidMount() {
+    // Content is visible by default (opacity:1). The fade-up is a pure
+    // enhancement: a one-shot keyframe that plays when an element scrolls
+    // into view. If the observer never fires, nothing is hidden.
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce || !('IntersectionObserver' in window)) return;
+    const els = this._root ? Array.from(this._root.querySelectorAll('[data-reveal]')) : [];
+    const play = (el) => { el.style.animation = 'revealUp 0.9s cubic-bezier(.2,.7,.2,1) both'; };
+    const inView = (el) => {
+      const r = el.getBoundingClientRect();
+      return r.top < (window.innerHeight || 0) && r.bottom > 0;
+    };
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { play(e.target); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    // Only arm the fade for off-screen elements; on-screen ones stay as-is (visible).
+    els.forEach(el => { if (!inView(el)) io.observe(el); });
+  }
+}
+</script>
+</body>
+</html>
