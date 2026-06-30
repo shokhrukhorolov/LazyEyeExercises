@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy &amp; Policy — LazyEye Training</title>
+<meta name="description" content="Privacy policy in plain language. No tracking, no ads, no data collection.">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; }
+  body {
+    background-color: #F1ECE2;
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E"),
+      radial-gradient(130% 100% at 50% 0%, #FFFEFB 0%, #F7F4EE 58%, #F1ECE2 100%);
+    background-size: 180px 180px, cover;
+    background-repeat: repeat, no-repeat;
+    background-attachment: fixed, fixed;
+  }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+  ::selection { background: #D8C7B0; color: #2B2825; }
+  @keyframes revealUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition: none !important; animation: none !important; }
+  }
+</style>
+</helmet>
+<div ref="{{ rootRef }}" style="background:transparent; color:#2B2825; font-family:'Mulish',-apple-system,sans-serif; -webkit-font-smoothing:antialiased; overflow-x:hidden; min-height:100vh;">
+
+  <!-- NAV -->
+  <header style="display:flex; align-items:center; justify-content:space-between; padding:28px clamp(24px,5vw,72px);">
+    <a href="index.html" style="display:flex; align-items:center; gap:12px; text-decoration:none; color:#2B2825;">
+      <span style="width:13px; height:13px; border-radius:50%; background:#C2724C; display:inline-block;"></span>
+      <span style="font-family:'Newsreader',serif; font-size:21px; font-weight:500;">LazyEye Training</span>
+    </a>
+    <a href="index.html" style="text-decoration:none; color:#5C574F; font-size:15px; font-weight:600;">← Home</a>
+  </header>
+
+  <!-- HEADER -->
+  <section data-reveal style="padding:clamp(64px,9vw,120px) clamp(24px,5vw,72px) clamp(36px,5vw,60px); max-width:860px;">
+    <p style="font-size:14px; letter-spacing:2.5px; text-transform:uppercase; color:#5C574F; margin:0 0 24px; font-weight:700;">The short, honest version</p>
+    <h1 style="font-family:'Newsreader',serif; font-weight:500; font-size:clamp(38px,6vw,72px); line-height:1.04; letter-spacing:-1px; margin:0 0 28px; text-wrap:balance;">Privacy, in <span style="font-style:italic; color:#C2724C;">plain language.</span></h1>
+    <p style="font-size:clamp(17px,1.5vw,20px); line-height:1.75; color:#5C574F; margin:0;">This is a free personal project, not a business. I'm not in the business of collecting anything about you, and the way the site is built reflects that. Here's exactly what does and doesn't happen.</p>
+  </section>
+
+  <!-- SECTIONS -->
+  <section style="position:relative; padding:clamp(20px,4vw,56px) clamp(18px,5vw,72px) clamp(30px,5vw,80px);">
+    <div style="max-width:1180px; margin:0 auto; background:linear-gradient(180deg,#FFFEFB 0%,#F7F4EE 100%); border:1px solid rgba(120,82,45,0.07); border-radius:clamp(24px,3vw,40px); box-shadow:0 60px 110px -65px rgba(120,82,45,0.42); padding:clamp(8px,1.5vw,20px) clamp(24px,4.5vw,72px) clamp(24px,3vw,48px);">
+      <sc-for list="{{ sections }}" as="ch" hint-placeholder-count="5">
+        <article data-reveal style="display:flex; gap:clamp(28px,5vw,72px); align-items:flex-start; flex-wrap:wrap; padding:clamp(48px,6vw,82px) 0; border-top:1px solid rgba(120,82,45,0.12);">
+          <div style="flex:0 0 auto; min-width:96px;">
+            <span style="font-family:'Newsreader',serif; font-size:clamp(38px,5vw,68px); font-weight:400; color:#D8C7B0; line-height:1;">{{ ch.num }}</span>
+          </div>
+          <div style="flex:1 1 480px; max-width:760px;">
+            <h2 style="font-family:'Newsreader',serif; font-weight:500; font-size:clamp(27px,3.4vw,44px); line-height:1.12; letter-spacing:-0.5px; margin:0 0 26px; text-wrap:balance;">{{ ch.q }}</h2>
+            <p style="font-size:clamp(17px,1.45vw,20px); line-height:1.85; color:#5C574F; margin:0 0 18px;">{{ ch.a1 }}</p>
+            <p style="font-size:clamp(17px,1.45vw,20px); line-height:1.85; color:#5C574F; margin:0;">{{ ch.a2 }}</p>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer data-reveal style="position:relative; z-index:2; background:#2B2825; color:#F7F4EE; padding:clamp(72px,9vw,120px) clamp(24px,5vw,72px) 48px; margin-top:clamp(56px,9vw,120px); border-radius:clamp(28px,4vw,48px) clamp(28px,4vw,48px) 0 0;">
+    <div style="max-width:720px;">
+      <p style="font-size:14px; letter-spacing:2.5px; text-transform:uppercase; color:#D8C7B0; margin:0 0 22px; font-weight:700;">A note from me</p>
+      <h2 style="font-family:'Newsreader',serif; font-weight:500; font-style:italic; font-size:clamp(26px,3.6vw,44px); line-height:1.2; margin:0 0 26px;">Have an idea, or want to share what worked for you?</h2>
+      <div style="display:flex; gap:16px; flex-wrap:wrap;">
+        <a href="https://www.linkedin.com/in/shokhrukhorolov/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:10px; background:rgba(247,244,238,0.08); border:1px solid rgba(247,244,238,0.18); color:#F7F4EE; text-decoration:none; padding:15px 26px; border-radius:36px; font-size:15px; font-weight:600; transition:background .4s ease;" onmouseover="this.style.background='rgba(247,244,238,0.16)'" onmouseout="this.style.background='rgba(247,244,238,0.08)'">in&nbsp; Connect on LinkedIn</a>
+        <a href="mailto:shokhrukh.orolov@gmail.com" style="display:inline-flex; align-items:center; gap:10px; background:#C2724C; color:#fff; text-decoration:none; padding:15px 26px; border-radius:36px; font-size:15px; font-weight:700; transition:transform .4s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">✉ Email me</a>
+      </div>
+    </div>
+    <div style="margin-top:clamp(48px,7vw,80px); padding-top:26px; border-top:1px solid rgba(247,244,238,0.12); display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:13px; color:#D8C7B0;">
+      <span>LazyEye Training, a free personal project. Not medical advice.</span>
+      <a href="privacy.html" style="color:#D8C7B0; text-decoration:none; font-weight:600;">Privacy &amp; Policy</a>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      rootRef: (el) => { this._root = el; },
+      sections: [
+        {
+          num: "01",
+          q: "What this site collects",
+          a1: "Nothing about you, personally. There are no accounts, no sign-ups, and no forms that send your information anywhere. I don't know who visits, and I'd like to keep it that way.",
+          a2: "The self-check on the Eye Check page runs entirely in your browser. Your answers are never transmitted to me or any server, when you close the tab, they're gone."
+        },
+        {
+          num: "02",
+          q: "What stays on your device",
+          a1: "A few small things may be saved locally in your own browser so the site feels less forgetful, for example, a photo you choose to drop into the Eye Check page stays on your device so you don't have to add it again.",
+          a2: "This data lives on your computer or phone, not with me. Clearing your browser storage removes it completely, any time you like."
+        },
+        {
+          num: "03",
+          q: "No tracking, no ads, no analytics",
+          a1: "There are no advertising pixels, no behavioural tracking, and no third-party analytics watching how you move around. I'm not measuring you, selling anything, or building a profile.",
+          a2: "This is a project I made because I have a lazy eye and wanted something calm to practice with, not a funnel."
+        },
+        {
+          num: "04",
+          q: "The one outside service",
+          a1: "The site loads its typefaces from Google Fonts, which means your browser fetches font files from Google's servers. That request can include your IP address, as any web request does. It's used only to deliver the fonts.",
+          a2: "Aside from that, the site doesn't talk to third parties. If that ever changes, I'll say so here."
+        },
+        {
+          num: "05",
+          q: "Questions, or want something removed?",
+          a1: "Since I don't hold any of your data, there's usually nothing to delete on my end, but if anything here worries you, I genuinely want to hear about it.",
+          a2: "Reach me at shokhrukh.orolov@gmail.com or on LinkedIn. This page may be updated as the site grows; the date below reflects the latest version."
+        }
+      ]
+    };
+  }
+  componentDidMount() {
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce || !('IntersectionObserver' in window)) return;
+    const els = this._root ? Array.from(this._root.querySelectorAll('[data-reveal]')) : [];
+    const play = (el) => { el.style.animation = 'revealUp 0.85s cubic-bezier(.2,.7,.2,1) both'; };
+    const inView = (el) => {
+      const r = el.getBoundingClientRect();
+      return r.top < (window.innerHeight || 0) && r.bottom > 0;
+    };
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { play(e.target); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    els.forEach(el => { if (!inView(el)) io.observe(el); });
+  }
+}
+</script>
+</body>
+</html>
